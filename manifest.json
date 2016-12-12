@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "WordPress API Pages getter thingie by Earth People",
+  "version": "1.0",
+  "description": "Gets da pages from da wordpress sites. Also da posts.",
+  "icons": {},
+  "browser_action": {
+    "default_title": "wordpress thingie",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "webNavigation",
+    "tabs",
+    "activeTab",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": [
+       "js/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content_script.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
