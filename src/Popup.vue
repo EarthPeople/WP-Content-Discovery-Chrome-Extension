@@ -111,11 +111,11 @@
 
         this.$http.get(url).then((response) => {
           if (response.ok) {
-            console.log("posts ok response", response.body);
+            console.log("pages ok response", response.body);
             this.pages = response.body;
           }
         }, (response) => {
-          console.log("posts err response", response);
+          console.log("pages err response", response);
 
       getUsers() {
 
