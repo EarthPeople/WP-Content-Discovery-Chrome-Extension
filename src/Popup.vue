@@ -116,7 +116,7 @@
           }
         }, (response) => {
           console.log("pages err response", response);
-        }
+        });
 
       },
 
