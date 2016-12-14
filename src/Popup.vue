@@ -55,6 +55,23 @@
         <p>Fetching posts...</p>
       </div>
 
+      <div v-if="users">
+        <h2>Users</h2>
+        <p>Got {{users.length}} users from the WP-JSON API.</p>
+        <ul>
+
+          <li v-for="user in users">
+            <img :src="user.avatar_urls['24']">
+            <a :href="user.url">{{user.slug}}</a>
+          </li>
+
+        </ul>
+      </div>
+      <div v-else>
+        <h2>Users</h2>
+        <p>Fetching users...</p>
+      </div>
+
     </div>
 
 </div>
@@ -99,6 +116,18 @@
           }
         }, (response) => {
           console.log("posts err response", response);
+
+      getUsers() {
+
+        let url = `${data.apiUrl}wp/v2/users`;
+
+        this.$http.get(url).then((response) => {
+          if (response.ok) {
+            console.log("users ok response", response.body);
+            this.users = response.body;
+          }
+        }, (response) => {
+          console.log("users err response", response);
         });
 
       },
@@ -128,6 +157,7 @@
 
             this.getPages();
             this.getPosts();
+            this.getUsers();
 
           }
         }, (response) => {
