@@ -30,3 +30,24 @@ npm run dev
 
 # build for production with minification
 npm run build
+```
+
+## Example websites that works
+
+Just some random ones that had updated to 4.7 when creating this plugin.
+
+- https://hmn.md/ <- even has a post found called "not for your eyes" :)
+- https://ma.tt/ <- has hidden page called "test123" :)
+- https://simple-history.com
+- http://www.norje.se/
+- http://labs.earthpeople.se/- http://winassist.se/
+- https://make.wordpress.org/core/
+- https://tommcfarlin.com/
+- https://brandson.se/
+- http://lightweb.se/
+- https://krokedil.se/
+- https://erikbernskiold.com/
+- https://www.bernskioldmedia.com
+- https://10up.com/
+- http://tdh.me/
+- http://tdh.me/
