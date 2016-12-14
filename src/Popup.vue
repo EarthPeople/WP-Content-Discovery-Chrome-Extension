@@ -22,14 +22,21 @@
 
         <div v-if="apiVersionFound" class="report">
             <ul class="report-nav">
-                <li class="report-nav__item report-nav__item--active">
-                    <a href="#report-pages" class="report-nav__link">Pages</a></li>
-                <li class="report-nav__item"><a href="#report-posts" class="report-nav__link">Posts</a></li>
-                <li class="report-nav__item"><a href="#report-users" class="report-nav__link">Users</a></li>
-                <li class="report-nav__item"><a href="#report-about" class="report-nav__link">About</a></li>
+                <li class="report-nav__item" v-bind:class="{'report-nav__item--active': show_pages}">
+                    <a v-on:click.prevent="switchTab('pages')" href="#report-pages" class="report-nav__link">Pages</a>
+                </li>
+                <li class="report-nav__item" v-bind:class="{'report-nav__item--active': show_posts}">
+                    <a v-on:click.prevent="switchTab('posts')" href="#report-posts" class="report-nav__link">Posts</a>
+                </li>
+                <li class="report-nav__item" v-bind:class="{'report-nav__item--active': show_users}">
+                    <a v-on:click.prevent="switchTab('users')" href="#report-users" class="report-nav__link">Users</a>
+                </li>
+                <li class="report-nav__item" v-bind:class="{'report-nav__item--active': show_about}">
+                    <a v-on:click.prevent="switchTab('about')" href="#report-about" class="report-nav__link">About</a>
+                </li>
             </ul>
 
-            <div id="report-pages" class="report__items report__items--pages">
+            <div id="report-pages" class="report__items report__items--pages" v-show="show_pages">
                 <div v-if="pages">
                     <h2>Pages</h2>
                     <p>Got {{pages.length}} pages from the WP-JSON API.</p>
@@ -46,7 +53,8 @@
                     <p>Fetching pages...</p>
                 </div>
             </div>
-            <div id="report-posts" class="report__items report__items--posts">
+
+            <div id="report-posts" class="report__items report__items--posts" v-show="show_posts">
                 <div v-if="posts">
                     <h2>Posts</h2>
                     <p>Got {{posts.length}} pages from the WP-JSON API.</p>
@@ -63,7 +71,7 @@
                     <p>Fetching posts...</p>
                 </div>
             </div>
-            <div id="report-users" class="report__items report__items--users">
+            <div id="report-users" ref="tab-users" class="report__items report__items--users" v-show="show_users">
                 <div v-if="users">
                     <h2>Users</h2>
                     <p>Got {{users.length}} users from the WP-JSON API.</p>
@@ -82,7 +90,7 @@
                 </div>
             </div>
 
-            <div id="report-about" class="report__items report__items--about">
+            <div id="report-about" ref="tab-about" class="report__items report__items--about" v-show="show_about">
                 <h2>About</h2>
                 <p>This extension is built by <a href="http://earthpeople.agency">Earth People.</a></p>
                 <p>
@@ -187,6 +195,13 @@
           this.apiVersionFound = null;
         });
 
+      },
+
+      switchTab(tab) {
+        this.show_pages = tab === 'pages';
+        this.show_posts = tab === 'posts';
+        this.show_users = tab === 'users';
+        this.show_about = tab === 'about';
       }
 
     }, // methods

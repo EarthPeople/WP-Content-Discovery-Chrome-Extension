@@ -6,10 +6,15 @@
     <!-- <script src="js/vue.js"></script>
     <script src="js/popup.js"></script> -->
     <style>
+
+        html {
+            overflow-y: scroll;
+        }
+
         body {
             background: #efefef;
             line-height: 1.5;
-            font-size: 16px;
+            font-size: 14px;
             width: 500px;
         }
 
@@ -20,8 +25,13 @@
         }
 
         code {
-            background-color: #eee;
+            background-color: #333;
+            color: #fff;
             padding: .25rem;
+        }
+
+        code a {
+            color: #fff;
         }
 
         h1,
@@ -73,15 +83,25 @@
             border-left: 1px solid #666;
             border-top: 1px solid #666;
             float: left;
+            position: relative;
         }
 
         .report-nav__item:last-child {
             border-right: 1px solid #666;
         }
 
+        .report-nav__item--active::after {
+            display: block;
+            content: "";
+            width: 100%;
+            border-bottom: 1px solid #efefef;
+            position: absolute;
+            bottom: -1px;
+        }
+
         .report-nav__link {
             color: #666;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             line-height: 3rem;
             text-decoration: none;
             padding: 0 1rem;
@@ -89,12 +109,7 @@
 
         .report__items {
             border: 1px solid #666;
-            display: none;
             padding: 1rem;
-        }
-
-        .report__items--active {
-            display: block;
         }
 
         .footer {
@@ -127,7 +142,7 @@
     </div>
 
     <footer class="footer">
-        Brought to you by <a href="http://earthpeople.agency">Earth People</a>. <span class="footer__logo"></span>
+        <p>Brought to you by <a href="http://earthpeople.agency">Earth People</a> <span class="footer__logo"></span></p>
     </footer>
     <script src="dist/build.js"></script>
 </body>
