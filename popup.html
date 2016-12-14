@@ -1,42 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>WP</title>
-  <!-- <script src="js/vue.js"></script>
-  <script src="js/popup.js"></script> -->
-  <style>
-  	body {
-  		width: 500px;
-      font-size:  16px;
-      line-height: 1.5;
-  	}
+    <meta charset="utf-8">
+    <title>WP</title>
+    <!-- <script src="js/vue.js"></script>
+    <script src="js/popup.js"></script> -->
+    <style>
+        body {
+            line-height: 1.5;
+            font-size: 16px;
+            width: 500px;
+        }
 
-    input, code, pre {
-      font-size: 1rem;
-    }
+        input,
+        code,
+        pre {
+            font-size: 1rem;
+        }
 
-    code {
-      background-color: #eee;
-      padding: .25rem;
-    }
+        code {
+            background-color: #eee;
+            padding: .25rem;
+        }
 
-    h1, h2, h3, h4 {
-      font-size: 1rem;
-    }
-  </style>
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #444;
+            font-size: 1.4rem;
+            font-weight: normal;
+            margin: 0 0 .5rem;
+        }
+
+        p {
+            margin: 0 0 1rem;
+        }
+
+        ul {
+            list-style: outside disc;
+            padding: 0 0 0 15px;
+        }
+
+        li img {
+            margin: 0 5px;
+            vertical-align: bottom;
+        }
+
+        .container {
+            padding: 10px;
+        }
+
+        .footer {
+            font-size: 0.875rem;
+            margin: 0 0 2rem;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #666;
+        }
+
+        .footer__logo {
+            background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAB3klEQVRIx73WvWpUURAH8N/ehLBCCBZBoog2wSyLjyDBgJ0IQYS0sg/gAygWYmFvniKgErCxM7XgByirxk4s1hglMcGVxN21mYWbde+5N41/OMWZO2f+Zz7uzKlJ4wKuYwlNzIW8gzae4wk2HRPzWMMhBiXrMHTnqxq/id0KhkfXbpxN4jZ6Yw6/HyP7OEa3FzbGolVgfIDVMeFaLdDvha1/krmXcH8Vb0fifiuhvxc2ZUHwANOJ0DXwKrf/gNMJ/emwKYvyWy7JzZkozSE2gzSFZTQzrOQ8KcLZqJKd2P8s8Xh4+ZUMlyuU7gwW8CJIfoVXZVjMKrg6xEn8CJK5igTNDLMVCTLUw4MsCMswmx2zhTSxXyFnR261XaLzG8/wJnJxKUL1Bf2Ss9sTuIbzCeP38TU6agdP0cV3nMOJBMHLSWxgsUDhT1TMQvxcDdwL4ncVIrSRRastcrWPq/gct98Keb2C8T7Wshgc6wVKUzjAxeg/7dy3HUwmCNbRHlbDnaiOUdRDfiVyNRXygyiOmQLj+2GzUrvu4nGuiw5iXzSUjrTriRzB60jqEmo5+SS+xdDp4FNUTqMg7nfxMJWcVsFs6OZW0Qxo/fehX6vwbLmRe7acCvlW7tnyKPVs+QuHi8oEyp2FcAAAAABJRU5ErkJggg==');
+            display: inline-block;
+            height: 24px;
+            vertical-align: bottom;
+            width: 24px;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
+    <div class="container">
 
-    <h1>WordPress API check &amp; fetch</h1>
+        <h1>WordPress API check &amp; fetch</h1>
 
-    <div id="root"></div>
+        <div id="root"></div>
 
-  </div>
+    </div>
 
-  <script src="dist/build.js"></script>
-
+    <footer class="footer">
+        Brought to you by <a href="http://earthpeople.agency">Earth People</a>. <span class="footer__logo"></span>
+    </footer>
+    <script src="dist/build.js"></script>
 </body>
 </html>
