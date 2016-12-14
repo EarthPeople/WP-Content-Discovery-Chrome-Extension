@@ -75,9 +75,9 @@
                 <div v-if="users">
                     <h2>Users</h2>
                     <p>Got {{users.length}} users from the WP-JSON API.</p>
-                    <ul>
+                    <ul class="users-list">
 
-                        <li v-for="user in users">
+                        <li v-for="user in users" class="users-list-item">
                             <img :src="user.avatar_urls['24']">
                             <a target="_blank" :href="user.url">{{user.slug}}</a>
                         </li>
