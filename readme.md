@@ -50,3 +50,4 @@ Just some random ones that had updated to 4.7 when creating this plugin.
 - http://nackademin.se/
 - https://required.com/
 - http://www.wpbeginner.com/
+- http://www.vansterpartiet.se/
