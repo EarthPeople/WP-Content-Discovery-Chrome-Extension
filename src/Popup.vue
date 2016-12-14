@@ -1,80 +1,99 @@
-
 <template>
-  <div id="rootRendered">
+    <div id="rootRendered">
 
-   <div v-if="apiUrl">
+        <div v-if="apiUrl">
 
-      <p>
-        Found WordPress API REST URL at:
-        <br><code><a v-bind:href="apiUrl">{{apiUrl}}</a></code>
-      </p>
+            <p>
+                Found WordPress API REST URL at:
+                <br><code><a v-bind:href="apiUrl">{{apiUrl}}</a></code>
+            </p>
 
-      <div v-if="apiVersionFound">
-        <p>Found version <code>{{apiVersionFound}}</code> of API.</p>
-      </div>
-      <div v-else>
-        <p>No API version found that we can work with.</p>
-      </div>
+            <div v-if="apiVersionFound">
+                <p>Found version <code>{{apiVersionFound}}</code> of API.</p>
+            </div>
+            <div v-else>
+                <p>No API version found that we can work with.</p>
+            </div>
+
+        </div>
+        <div v-else>
+            <p>Sorry, no WP API REST found at this page.</p>
+        </div>
+
+        <div v-if="apiVersionFound" class="report">
+            <ul class="report-nav">
+                <li class="report-nav__item report-nav__item--active">
+                    <a href="#report-pages" class="report-nav__link">Pages</a></li>
+                <li class="report-nav__item"><a href="#report-posts" class="report-nav__link">Posts</a></li>
+                <li class="report-nav__item"><a href="#report-users" class="report-nav__link">Users</a></li>
+                <li class="report-nav__item"><a href="#report-about" class="report-nav__link">About</a></li>
+            </ul>
+
+            <div id="report-pages" class="report__items report__items--pages">
+                <div v-if="pages">
+                    <h2>Pages</h2>
+                    <p>Got {{pages.length}} pages from the WP-JSON API.</p>
+                    <ul>
+
+                        <li v-for="post in pages">
+                            <a :href="post.link">{{post.title.rendered}}</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div v-else>
+                    <h2>Pages</h2>
+                    <p>Fetching pages...</p>
+                </div>
+            </div>
+            <div id="report-posts" class="report__items report__items--posts">
+                <div v-if="posts">
+                    <h2>Posts</h2>
+                    <p>Got {{posts.length}} pages from the WP-JSON API.</p>
+                    <ul>
+
+                        <li v-for="post in posts">
+                            <a :href="post.link">{{post.title.rendered}}</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div v-else>
+                    <h2>Posts</h2>
+                    <p>Fetching posts...</p>
+                </div>
+            </div>
+            <div id="report-users" class="report__items report__items--users">
+                <div v-if="users">
+                    <h2>Users</h2>
+                    <p>Got {{users.length}} users from the WP-JSON API.</p>
+                    <ul>
+
+                        <li v-for="user in users">
+                            <img :src="user.avatar_urls['24']">
+                            <a :href="user.url">{{user.slug}}</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div v-else>
+                    <h2>Users</h2>
+                    <p>Fetching users...</p>
+                </div>
+            </div>
+
+            <div id="report-about" class="report__items report__items--about">
+                <h2>About</h2>
+                <p>This extension is built by <a href="http://earthpeople.agency">Earth People.</a></p>
+                <p>
+                    Check out or plugin checker, to find what popular plugins your favorite sites are running:
+                    <a href="http://wppluginchecker.earthpeople.se/">WordPress Plugin Checker</a>
+                </p>
+            </div>
+
+        </div>
 
     </div>
-    <div v-else>
-      <p>Sorry, no WP API REST found at this page.</p>
-    </div>
-
-    <div v-if="apiVersionFound">
-
-      <div v-if="pages">
-        <h2>Pages</h2>
-        <p>Got {{pages.length}} pages from the WP-JSON API.</p>
-        <ul>
-
-          <li v-for="post in pages">
-            <a :href="post.link">{{post.title.rendered}}</a>
-          </li>
-
-        </ul>
-      </div>
-      <div v-else>
-        <h2>Pages</h2>
-        <p>Fetching pages...</p>
-      </div>
-
-      <div v-if="posts">
-        <h2>Posts</h2>
-        <p>Got {{posts.length}} pages from the WP-JSON API.</p>
-        <ul>
-
-          <li v-for="post in posts">
-            <a :href="post.link">{{post.title.rendered}}</a>
-          </li>
-
-        </ul>
-      </div>
-      <div v-else>
-        <h2>Posts</h2>
-        <p>Fetching posts...</p>
-      </div>
-
-      <div v-if="users">
-        <h2>Users</h2>
-        <p>Got {{users.length}} users from the WP-JSON API.</p>
-        <ul>
-
-          <li v-for="user in users">
-            <img :src="user.avatar_urls['24']">
-            <a :href="user.url">{{user.slug}}</a>
-          </li>
-
-        </ul>
-      </div>
-      <div v-else>
-        <h2>Users</h2>
-        <p>Fetching users...</p>
-      </div>
-
-    </div>
-
-</div>
 </template>
 
 <script>
@@ -185,4 +204,9 @@
     } // watch
 
   }
+
+
+
+
+
 </script>
