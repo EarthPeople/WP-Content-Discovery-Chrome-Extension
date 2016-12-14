@@ -5,7 +5,7 @@
 
             <p>
                 Found WordPress API REST URL at:
-                <br><code><a v-bind:href="apiUrl">{{apiUrl}}</a></code>
+                <br><code><a target="_blank" v-bind:href="apiUrl">{{apiUrl}}</a></code>
             </p>
 
             <div v-if="apiVersionFound">
@@ -43,7 +43,7 @@
                     <ul>
 
                         <li v-for="post in pages">
-                            <a :href="post.link">{{post.title.rendered}}</a>
+                            <a target="_blank" :href="post.link">{{post.title.rendered}}</a>
                         </li>
 
                     </ul>
@@ -61,7 +61,7 @@
                     <ul>
 
                         <li v-for="post in posts">
-                            <a :href="post.link">{{post.title.rendered}}</a>
+                            <a target="_blank" :href="post.link">{{post.title.rendered}}</a>
                         </li>
 
                     </ul>
@@ -79,7 +79,7 @@
 
                         <li v-for="user in users">
                             <img :src="user.avatar_urls['24']">
-                            <a :href="user.url">{{user.slug}}</a>
+                            <a target="_blank" :href="user.url">{{user.slug}}</a>
                         </li>
 
                     </ul>
@@ -92,10 +92,10 @@
 
             <div id="report-about" ref="tab-about" class="report__items report__items--about" v-show="show_about">
                 <h2>About</h2>
-                <p>This extension is built by <a href="http://earthpeople.agency">Earth People.</a></p>
+                <p>This extension is built by <a target="_blank" href="http://earthpeople.agency">Earth People.</a></p>
                 <p>
                     Check out or plugin checker, to find what popular plugins your favorite sites are running:
-                    <a href="http://wppluginchecker.earthpeople.se/">WordPress Plugin Checker</a>
+                    <a target="_blank" href="http://wppluginchecker.earthpeople.se/">WordPress Plugin Checker</a>
                 </p>
             </div>
 
