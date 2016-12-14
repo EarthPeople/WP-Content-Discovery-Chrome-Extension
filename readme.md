@@ -47,4 +47,5 @@ Just some random ones that had updated to 4.7 when creating this plugin.
 - https://www.bernskioldmedia.com
 - https://10up.com/
 - http://tdh.me/
-- http://tdh.me/
+- http://nackademin.se/
+
