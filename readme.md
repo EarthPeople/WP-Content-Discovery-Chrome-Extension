@@ -25,8 +25,5 @@ The build process compiles the VUE template so it can work in the Chrome extensi
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
+# build it. then you can install/reaload the extension in chrome
 npm run build
