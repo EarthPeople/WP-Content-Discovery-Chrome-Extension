@@ -12,7 +12,13 @@
                 <p>Found version <code>{{apiVersionFound}}</code> of API.</p>
             </div>
             <div v-else>
-                <p>No API version found that we can work with.</p>
+                <p>Could not find the <code>wp/2</code> namespace in the API.</p>
+                <p>Found namespaces:</p>
+                <ul v-if="apiNamespaces">
+                    <li v-for="namespace in apiNamespaces">
+                        {{namespace}}
+                    </li>
+                </ul>
             </div>
 
         </div>
@@ -93,6 +99,7 @@
             <div id="report-about" ref="tab-about" class="report__items report__items--about" v-show="show_about">
                 <h2>About</h2>
                 <p>This extension is built by <a target="_blank" href="http://earthpeople.agency">Earth People.</a></p>
+                <p>The <a target="_blank" href="https://github.com/EarthPeople/wordpress-api-post-lists-chrome-extension">source code is available over at GitHub</a>.</p>
                 <p>
                     Check out or plugin checker, to find what popular plugins your favorite sites are running:
                     <a target="_blank" href="http://wppluginchecker.earthpeople.se/">WordPress Plugin Checker</a>
@@ -184,6 +191,7 @@
             console.log("apiVersion", apiVersion);
 
             this.apiVersionFound = apiVersion;
+            this.apiNamespaces = response.body.namespaces;
 
             this.getPages();
             this.getPosts();
@@ -219,9 +227,5 @@
     } // watch
 
   }
-
-
-
-
 
 </script>
