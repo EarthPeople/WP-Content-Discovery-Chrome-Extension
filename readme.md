@@ -1,4 +1,9 @@
-# Readme
+# WP Content Discovery
+
+It's a Chrome Extension.
+
+Download the pre-built extension here:
+https://chrome.google.com/webstore/detail/wp-content-discovery/alfheophjkbigfnnaimmbkmankadpoic?hl=sv
 
 ## The files and their connections
 
