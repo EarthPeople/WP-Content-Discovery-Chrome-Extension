@@ -1,7 +1,7 @@
 {
-  "name": "browserthingie",
-  "description": "A Vue.js project",
-  "author": "Pär Thernström <par@earthpeople.se>",
+  "name": "WP_Content_Discovery",
+  "description": "Discover content on WordPress sites, using the WordPress REST API",
+  "author": "Earth People AB <par@earthpeople.se>",
   "private": true,
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",

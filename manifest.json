@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "WordPress API Pages getter thingie by Earth People",
-  "version": "1.0",
-  "description": "Gets da pages from da wordpress sites. Also da posts.",
+  "name": "WP Content Discovery",
+  "version": "1.1",
+  "description": "Discover content on WordPress sites, using the WordPress REST API",
+  "homepage_url": "https://earthpeople.agency/",
   "icons": {},
   "browser_action": {
     "default_title": "wordpress thingie",
