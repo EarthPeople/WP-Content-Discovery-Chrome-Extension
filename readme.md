@@ -1,4 +1,8 @@
-# Readme
+# WP Content Discovery
+
+It's a Chrome Extension that detect pages, posts and users on WordPress sites using the WP REST API.
+
+[Download the pre-built extension from the Chrome Webstore.](https://chrome.google.com/webstore/detail/wp-content-discovery/alfheophjkbigfnnaimmbkmankadpoic?hl=sv)
 
 ## The files and their connections
 
