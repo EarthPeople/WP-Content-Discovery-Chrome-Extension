@@ -40,6 +40,8 @@ Just some random ones that had updated to 4.7 when creating this plugin.
 - https://hmn.md/ <- even has a post found called "not for your eyes" :)
 - https://ma.tt/ <- has hidden page called "test123" :)
 - https://simple-history.com
+- http://laughingsquid.com/
+- http://boingboing.net/
 - http://www.norje.se/
 - http://labs.earthpeople.se/- http://winassist.se/
 - https://make.wordpress.org/core/
