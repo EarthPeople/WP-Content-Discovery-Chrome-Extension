@@ -57,3 +57,5 @@ Just some random ones that had updated to 4.7 when creating this plugin.
 - https://required.com/
 - http://www.wpbeginner.com/
 - http://www.vansterpartiet.se/
+
+[![Run on Repl.it](https://repl.it/badge/github/EarthPeople/WP-Content-Discovery-Chrome-Extension)](https://repl.it/github/EarthPeople/WP-Content-Discovery-Chrome-Extension)
